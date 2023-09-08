@@ -1,0 +1,50 @@
+Redux helps to manage application states and often used in React
+
+Basic Terminalogies 
+
+1. Redux -> it is the state management tool which help us to manage the complex states, 
+            with the help of Redux we can create a 'CDS' which is the central data store which help us to 
+            manage the whole data stored in just one store.So the whole data can be manage with just one store.
+
+2. Reducer -> reducers functions,  Manage the State and returns the newly updated state. They are actually the 
+             functions which manages the state in the redux and their are some 'Actions' which are the part 
+             of the reducer functions [which is actually the paramater in the reducer function].
+             It contains 2 paramaters:
+                1. State [states we provide]      2. Actions
+
+3. Actions -> They have 2 properties types :
+                1. Type (Unique Identifier)        2. Paylaod (WHICH HAS DATA)
+
+4. Dispatch -> it is created whenever we want to send an 'EVENT DATA' ,whenever events occur or we want to 
+                send data to the redux so we have to use the dispatch function to sends the 'actions' to
+                update the data .When we want to send data to the redux store
+
+Cmnds
+1. npm create vite@latest = create react project
+2. cd projectName = go inside the Directory 
+3. npm install redux react-redux
+
+File Herreachy 
+1. 'Create store' insde the 'src' folder i.e index.js [ It contained and used to Handle all the 
+                                                    'REACT-STATES' in this file]
+
+2. We need to provide store to the whole application, which contains in the 'App component' 
+    [App component is the main component which conatine the store so all of the components will have 
+    access to the react store] 
+    Note : index.js [main.js for 'vite'] outside the src is the root file which contains App component inside it.
+
+3. 'Provider' provide the store so we wrap the App component with it and we provide prop in the 'provider'
+
+4. TO get the 'state' which is pass as paramater in reducer function from the 'Store' in the App.js  ,
+         we use 'useSelector' hook from the redux to get that state.
+Limitation on the Reducer function
+1. They must be Synchronous function
+2. We should not mutate the originanl state
+
+Redux Toolkit -> it contains all the functions which will help us to mutate the state and will help us 
+                    to automatically create and manage the actions Identifier.We don't need the hardcoded 
+                    Identifier like 'Inc' and 'Dec'.
+                    It also handle all the reducer function inside it by which we can directly called the 
+                    reducer function from the main functions
+
+                    npm install @reduxjs/toolkit  
